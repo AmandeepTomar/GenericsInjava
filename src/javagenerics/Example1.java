@@ -42,4 +42,10 @@ class Item<T>{
 
     private T item;
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "item=" + item +
+                '}';
+    }
 }
