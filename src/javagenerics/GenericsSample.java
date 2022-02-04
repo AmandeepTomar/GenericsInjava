@@ -21,6 +21,15 @@ public class GenericsSample {
         genericMethods.printValue(345L);
         genericMethods.printValue("VALUE IS");
 
+        genericMethods.printValues("Name",31);
+        genericMethods.printValues("Name",31L);
+        Integer [] array=new Integer[]{1,2,3,4,5,6};
+        genericMethods.printValuesAsArray(array);
+
+        String [] names=new String[]{"name1","name2","name3","name4","name5"};
+        genericMethods.printValuesAsArray(names);
+
+
 
     }
 }
