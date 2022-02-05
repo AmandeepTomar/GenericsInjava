@@ -197,4 +197,65 @@ List<Integer> is not subtype of List<Number>
         printAllItems(list4);
     }
   ```
-- 
+  
+####Type Erasure
+- Java uses type erasure to implement generics, this is how generic code handled
+- It replaces all generic type parameters with their bound or object for unbound type parameters 
+- It is true for wild card as well
+- NOTE <B> Final bytecode will contain plain java classes and object</B>
+- Erasure uses type casting , sometimes it needed tro generate additional methods. 
+- These are called <B>Bridge Methods</b> to maintain polymorphism with generic type as well.
+- Generic Types
+```aidl
+    class FirstStore<T>{
+    private T t;
+
+      public T getT() {
+          return t;
+      }
+
+      public void setT(T t) {
+          this.t = t;
+      }
+      }
+
+      // compile code like
+      class FirstStore{
+      private Object t;
+    
+          public Object getT() {
+              return t;
+          }
+    
+          public void setT(Object t) {
+              this.t = t;
+          }
+      }
+```
+- Bounded Type
+```aidl
+    class FirstStore<T extends Serializable>{
+    private T t;
+
+      public T getT() {
+          return t;
+      }
+
+      public void setT(T t) {
+          this.t = t;
+      }
+      }
+
+      // compile code like
+      class FirstStore{
+      private Serializable t;
+    
+          public Serializable getT() {
+              return t;
+          }
+    
+          public void setT(Serializable t) {
+              this.t = t;
+          }
+      }
+```
