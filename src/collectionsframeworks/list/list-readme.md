@@ -56,3 +56,22 @@
     `List list = Collections.synchronizedList(new LinkedList(...));`
   - Adding and removing from first and last is `O(1)` running time.
 
+###Vector
+
+- Thread safe and have capacity increment counter.
+
+###STACK
+
+- `LIFO` Last In First out 
+- Can be implemented using array and LinkedList
+- Operations `push()->Insert, pop()->Remove and peek()->Top or Last item of stack`
+- Modern programing languages are `STACK-Oriented`
+- Depth search algo can be implemented using stack
+- Strongly connected elements in a graph G(E,V)
+- We have considered Vectors - and we came to the conclusion that ArrayList is a better option usually.
+
+- Stack extends the Vector class - which means that stacks are inherently synchronized.
+
+  - however synchronization is not always needed - in such cases it is better to use ArrayDeque
+- `poll()` this will return the Last item , but it is different from `pop()` because it throw exception if stack is empty.
+
