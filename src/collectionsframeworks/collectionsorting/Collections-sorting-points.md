@@ -13,6 +13,51 @@
 - We can map the `Unsynchronised` collection into `Synchronised` 
 - We are able to sort the List<E interface , 
   - `Queue<String> queue=new LinkedList<>()` its not sort because `sort()` required List interface to sort.
-  - `List<String> queue=new LinkedList<>()` its works fine.
-- If you want to sort reference/Custom Object list 
-  - Solution1 -> need to implement `Comparable<Object>` interface
+    - `List<String> queue=new LinkedList<>()` its works fine.
+      - If you want to sort reference/Custom Object list 
+        - Solution1 -> need to implement `Comparable<Object>` interface
+        - ```aidl
+                @Override
+          public int compareTo(Person o) {
+             // return name.compareTo(o.getName()); // provide ascending order
+              // provide ascending order
+              if (this.getAge() > o.getAge()) return +1;
+              if (this.getAge()== o.getAge())return 0;
+              else return -1;
+            // if you want in descending order
+            if (this.getAge() > o.getAge()) return -1;
+            if (this.getAge()== o.getAge())return 0;
+            else return +1;
+
+          }
+          ```
+        
+      - Solution2 ->`Comparator` is class and interface
+        - We create a separate comparator for class and extract comparator information from simple data class
+        - We can provide as many comparator as we want.
+        - ```aidl
+           public class BookComparator implements Comparator<Book> {
+
+          @Override
+          public int compare(Book o1, Book o2) {
+            return o1.getBookName().compareTo(o2.getBookName());
+          }
+          }
+            // We can use like 
+               books.sort(new BookComparator());
+           printAllItem(books);
+            System.out.println("===========");
+             Collections.sort(books,new BookComparator());
+          ```
+        
+###Sorting with Lamda Expression
+
+- we don't need to implement Comparator and Comparable interface 
+- ```aidl
+        System.out.println("Apply sorting on name then count");
+        Collections.sort(items, Comparator.comparing(Item::getName).thenComparing(Item::getCount));
+        CollectionsSortExample.printAllItem(items);
+
+   ```
+        
+

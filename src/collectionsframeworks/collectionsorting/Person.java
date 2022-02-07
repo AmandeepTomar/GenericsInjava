@@ -49,10 +49,14 @@ public class Person implements Comparable<Person> {
     @Override
     public int compareTo(Person o) {
        // return name.compareTo(o.getName()); // provide ascending order
+        // provide ascending order
+//        if (this.getAge() > o.getAge()) return +1;
+//        if (this.getAge()== o.getAge())return 0;
+//        else return -1;
         // if you want in descending order
-        if (this.getAge() < o.getAge()) return +1;
+        if (this.getAge() > o.getAge()) return -1;
         if (this.getAge()== o.getAge())return 0;
-        else return -1;
+        else return +1;
 
     }
 }

@@ -8,7 +8,29 @@ public class CollectionsSortExample {
 
         sortListExample();
         sortListWithCustomObjectExample();
+        sortListWithCustomObjectWithComparatorExample();
 
+    }
+
+    private static void sortListWithCustomObjectWithComparatorExample() {
+        List<Book> books=new ArrayList<>();
+        books.add(new Book("BookName","Author Name",700));
+        books.add(new Book("Java","John",800));
+        books.add(new Book("Android","Google",7000));
+        books.add(new Book("Angular","Another",650));
+        books.add(new Book("Spring","Author is ",7001));
+
+        books.sort(new BookComparator());
+        printAllItem(books);
+        System.out.println("===========");
+        Collections.sort(books,new BookComparator());
+        printAllItem(books);
+        System.out.println("Next");
+        books.sort(new BookComparator().reversed());
+        printAllItem(books);
+        System.out.println("===========");
+        Collections.sort(books,new BookComparator().reversed());
+        printAllItem(books);
     }
 
     private static void sortListWithCustomObjectExample() {
