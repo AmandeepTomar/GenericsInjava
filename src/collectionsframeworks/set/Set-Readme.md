@@ -41,9 +41,9 @@
   `SortedSet s = Collections.synchronizedSortedSet(new TreeSet(...));`
 - `set.subSet(1,5)` return set with item 1 inclusive and 5 exclusive 
   - Example set(1,2,5,7,8,9) => set.subSet(1,5)=>[1,2]
-- `set.tailSet(5)` it return all element with set  5>=
+- `set.tailSet(5)` it return all element with SortedSet, including element
   - Example set(1,2,5,7,8,9) => set.tailSet(5)=>[5,7,8,9]
-- `set.headSet(5)` it return all element with set  5<=
+- `set.headSet(5)` it return all element with SortedSet , excluding element
 - Example set(1,2,5,7,8,9) => set.tailSet(6)=>[1,2,5]
 - We can get the largest and smallest 
   - `set.first()` smallest 
