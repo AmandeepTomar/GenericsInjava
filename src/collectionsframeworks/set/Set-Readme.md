@@ -48,3 +48,6 @@
 - We can get the largest and smallest 
   - `set.first()` smallest 
   - `set.last()` largest
+- <B> it is memory friendly</B>
+  -it is taking less memory than HashSet and LinkedHashSet
+- Can not store null in TreeSet
