@@ -11,4 +11,8 @@
 - It contains polymorphic algorithms that operate on collections, "wrappers", which return a new collection backed by a specified collection, and a few other odds and ends.
 - The methods of this class all throw a NullPointerException if the collections or class objects provided to them are null.
 - We can map the `Unsynchronised` collection into `Synchronised` 
-- 
+- We are able to sort the List<E interface , 
+  - `Queue<String> queue=new LinkedList<>()` its not sort because `sort()` required List interface to sort.
+  - `List<String> queue=new LinkedList<>()` its works fine.
+- If you want to sort reference/Custom Object list 
+  - Solution1 -> need to implement `Comparable<Object>` interface
