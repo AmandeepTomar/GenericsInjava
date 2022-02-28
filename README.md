@@ -69,6 +69,7 @@ Map is not comes under collection DataStructure
 - it can include duplicates
 - it provides full visibility and control over the ordering of elements.
 - ArrayList using 1-D Arrays under the hood.
+- ArrayList allow `null` elements. 
 - `ArrayList implements Serializable,cloneable, Iterable, Collection,List,RandomAccess`
 - Initial capacity is 10.
 - Resizing the array is really heavy operation O(N) so if we know that we need more that 10 or like 10000 items to be added in list them we need to create a list with initial capacity of 10000.
