@@ -84,7 +84,34 @@ Map is not comes under collection DataStructure
   - They are serializable if all elements are serializable.
   - The order of elements in the list is the same as the order of the provided arguments, or of the elements in the provided array.
   - They are value-based. Callers should make no assumptions about the identity of the returned instances. Factories are free to create new instances or reuse existing ones. Therefore, identity-sensitive operations on these instances (reference equality (==), identity hash code, and synchronization) are `unreliable and should be avoided`.
-  - <B>`Add null , but if we want to add null in List<String> getting nullpointer exception`</B>
+  ```
+        List<Integer> list=new ArrayList<>();
+           // list.add(null);
+            list.add(1);
+
+            System.out.println(list);
+
+            List<String> strList=new ArrayList<>();
+            strList.add(null);
+
+            System.out.println(strList);
+
+            List<Integer> list1=List.copyOf(list);
+            list1.add(null);
+            
+            if you add null in list its works file. 
+            add null in strList its works fine.
+            
+            if You add null in list and now you try List<Integer> list1=List.copyOf(list); will get NullPointerException cause you added null in list. 
+            
+            if you remove null from list then it works fine. 
+            
+            Now you get the copy of list and now you try to add null , will get NullPointerExceptio.
+            
+            If you want to add some valid object like not null like list1.add(5) then you get public class UnsupportedOperationException extends RuntimeException {
+
+            
+  ```
   
   ## LinkedList
   
