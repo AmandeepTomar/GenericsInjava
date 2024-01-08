@@ -3,6 +3,26 @@
 `Iterable`<----`Collection`<-----`List, Queue and set` All are interface.
 ###List (Interface)
 
+- List `interface` has some specific method related to List
+```
+    E get(int index);
+    E set(int index, E element);
+    void add(int index, E element);
+    E remove(int index);
+    int indexOf(Object o);
+    int lastIndexOf(Object o);
+    ListIterator<E> listIterator();
+    ListIterator<E> listIterator(int index);
+    List<E> subList(int fromIndex, int toIndex); // backed by original list that means if we made any changes in original list will be reflected in sub list.
+// Added in Java 1.8
+  default void sort(Comparator<? super E> c) 
+// added in JAVA 9
+ static <E> List<E> of(E... elements)
+// Added in JAVA 10
+ static <E> List<E> copyOf(Collection<? extends E> coll)
+```
+
+
 - ArrayList
 - LinkedList
 - Vector
@@ -12,17 +32,18 @@
 
 - it extends `Collection interface` and `Collection interface` extends `Iterable` Interface
 - it is ordered collection
-- it can include duplicates
+- it can include duplicates and `null`
 - it provides full visibility and control over the ordering of elements.
 - ArrayList using 1-D Arrays under the hood.
 - `ArrayList implements Serializable,cloneable, Iterable, Collection,List,RandomAccess`
-- Initial capacity is 10.
+- Initial capacity is 10. increased by 50% of size when we reached at the capacity.
 - Resizing the array is really heavy operation O(N) so if we know that we need more that 10 or like 10000 items to be added in list them we need to create a list with initial capacity of 10000.
-- Random Indexing get(0)->`O(1)`
-- Insert item at given index , Remove at given index -> `O(N)` 
-- ArrayList are fast if we manipulate at last item.coz Java don't need to perform any shifting or operation.
+- Random Indexing get(0)->`O(1)` , access the elements.
+- Insert item at given index , Remove at given index -> `O(N)`
+- When we add new element at the start of the list then we need to shift all the elements towards the right of the list that why adding at the start or beginning of the list is expensive `O(N)`. Same if we remove elements from the begning then it shift all elements to `LEFT` and it is also expensive operation of ~ `O(N)`
+- ArrayList is fast if we manipulate at last item. coz Java doesn't need to perform any shifting or operation. -> `O(1). at last index. 
 - If we check list is `list.contains(item)` it will take `O(N)`
-- The List.of and List.copyOf static factory methods provide a convenient way to create unmodifiable lists. The List instances created by these methods have the following characteristics:
+- The `List.of` and `List.copyOf` static factory methods provide a convenient way to create unmodifiable lists. The List instances created by these methods has the following characteristics:
 
   - They are unmodifiable. Elements cannot be added, removed, or replaced. Calling any mutator method on the List will always cause `UnsupportedOperationException` to be thrown. However, if the contained elements are themselves mutable, this may cause the List's contents to appear to change.
   - They `disallow null elements`. Attempts to create them with null elements result in `NullPointerException`.
@@ -35,26 +56,27 @@
 ##LinkedList
   
 - LinkedList node connected by references 
-- As array have a disadvantages , there may be `holes` in the Array Data structures and we have to shift a lot of items.
-- This problem will be fixed by LinkedList.
+- As arrays have a disadvantages, there may be `holes` in the Array Data structures and we have to shift a lot of items.
+- LinkedList will fix this problem.
 - LinkedList 
   - Data 
   - Reference of Next node 
-  - First node is `head`
+  - The first node is `head`
   - Last node reference to `NULL called tail node.`
 - It required more memory than Arrays 
-- But it does not have holes so no shifting required.
+- But it does not have holes so no shifting is required.
 - No `random Access indexing`
 - We can implement Data Structures such as `STACKS and QUEUE`
-- Finding arbitrary item in the linked list still has `O(N) Running Time
-- We can insert item at the beginning of the data structure `FAST at O(1)`
-- If we add and remove at the end or last of linked list its operation is `SLOW O(N)`
+- Finding an arbitrary item in the linked list still has `O(N)` Running Time
+- We can insert an item at the beginning of the data structure `FAST at O(1)`
+- If we add and remove at the end or last of the linked list its operation is `SLOW O(N)`
 - <B>Important Notes</B>
   - All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end,
   - Note that this implementation is not synchronized.
   - This is typically accomplished by `synchronizing on some object that naturally encapsulates the list`. If no such object exists, the list should be` "wrapped" using the Collections.synchronizedList method`. This is best done at creation time, to prevent accidental unsynchronized access to the list:
     `List list = Collections.synchronizedList(new LinkedList(...));`
   - Adding and removing from first and last is `O(1)` running time.
+
 
 ###Vector
 
