@@ -4,6 +4,30 @@
 - `Collection` interface extends `java.lang.Iterable`
 
 `Iterable`<----`Collection`<-----`List, Queue and set` All are interface.
+
+## Collection interface has methods 
+- Basis Operations
+  ```
+    boolean add(Object o);
+    boolean remove(Object o);
+    boolean contains(Object o);
+    int size()
+    Iterator<E> iterator();
+  ```
+- Bulk operations
+   ```
+    boolean addAll(Collection<? extends E> c);
+    boolean removeAll(Collection<?> c);
+    boolean retainAll(Collection<?> c); // elements that are not present in new collection will be removed from old one.
+    boolean containsAll(Collection<?> c);
+    void clear();
+  ```
+ - Array Operations
+   ```
+     Object[] toArray();
+     <T> T[] toArray(T[] a);
+   ```  
+
 ###List (Interface)
 
 - ArrayList
