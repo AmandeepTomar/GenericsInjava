@@ -14,12 +14,16 @@
     ListIterator<E> listIterator();
     ListIterator<E> listIterator(int index);
     List<E> subList(int fromIndex, int toIndex); // backed by original list that means if we made any changes in original list will be reflected in sub list.
+
 // Added in Java 1.8
   default void sort(Comparator<? super E> c) 
+
 // added in JAVA 9
  static <E> List<E> of(E... elements)
+
 // Added in JAVA 10
- static <E> List<E> copyOf(Collection<? extends E> coll)
+ static <E> List<E> copyOf(Collection<? extends E> c)
+
 ```
 
 
@@ -51,6 +55,68 @@
   - The order of elements in the list is the same as the order of the provided arguments, or of the elements in the provided array.
   - They are value-based. Callers should make no assumptions about the identity of the returned instances. Factories are free to create new instances or reuse existing ones. Therefore, identity-sensitive operations on these instances (reference equality (==), identity hash code, and synchronization) are `unreliable and should be avoided`.
   - <B>`Add null , but if we want to add null in List<String> getting nullpointer exception`</B>
+- `list1.removeAll(list2)` all the elements that is present in list one and list two is removed.
+- `list1.retainAll(list2)` All the elements that are common in both list will be retains and all other removed.
+
+**NOTE**
+- When we iterate a list then we can not remove the element using `foreach loop or for loop`. if we tried then we will get `ConcurrentModificationException`.
+
+```java
+class Sample {
+   
+  private void printList() {
+    list.forEach {
+      System.out.println(it);
+      if (it == 9) {
+        list.remove(Integer.valueOf(it)); // this line throw the exception.
+      }
+    }
+  }
+  
+  // solution 
+  
+  private void solution(){
+    System.out.println(list);
+    Iterator<Integer> iterator = list.iterator();
+    while (iterator.hasNext()) {
+      int element = iterator.next();
+      System.out.println(element);
+      if (element == 4 || element ==100) {
+        iterator.remove();
+      }
+    }
+    System.out.println("Removed 4 and 100 " + list);
+  }
+}
+
+```
+- To fix that remove element problem we need to use the `Iterator()` check `solution()` above.
+- `Iterator is an Interface` it has some methods 
+```java
+  - hasNext();
+  - next();
+  - remove();
+  - default forEach(); // added in java 1.8
+```
+
+**ListIterator**
+- `ListInterator` is an `interface` that extends the `iterator` interface.
+- it has some methods and bidirectional access capability and also replace the elements.
+- Uses traversing Tree and application installation software.
+
+```java
+void add(E e);
+void set(E e);
+void remove();
+// Bidirectional Accress 
+boolean hasNext();
+boolean hasPrevious();
+E next();
+E previous();
+int nextIndex();
+int previousIndex();
+```
+
 
 
 ##LinkedList

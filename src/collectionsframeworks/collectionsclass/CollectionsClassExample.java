@@ -4,7 +4,6 @@ import collectionsframeworks.collectionsorting.CollectionsSortExample;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class CollectionsClassExample {

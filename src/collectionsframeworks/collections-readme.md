@@ -3,6 +3,16 @@
 - `toArray()` convert any collection into 1-D Array.
 - `Collection` interface extends `java.lang.Iterable`
 
+- **Java.util.collection**
+  - List 
+  - Set
+  - Queue
+
+- **Map*
+  - SortedMap
+
+- These all the by default unSynchronised methods
+
 `Iterable`<----`Collection`<-----`List, Queue and set` All are interface.
 
 ## Collection interface has methods 

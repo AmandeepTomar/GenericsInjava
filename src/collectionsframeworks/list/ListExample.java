@@ -88,7 +88,7 @@ public class ListExample {
         System.out.println(list3);
         System.out.println(list3.contains("No Data"));
         boolean isEqual=list.equals(list3);
-        System.out.println("Is list1 and list3 equals "+isEqual);
+        System.out.println("Is list and list3 equals "+isEqual);
 
         try {
             list3.add("Civil");
