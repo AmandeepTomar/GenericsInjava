@@ -1,9 +1,6 @@
 package collectionsframeworks.maps;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * public class HashMap<K,V> extends AbstractMap<K,V>
@@ -16,9 +13,29 @@ public class HashMapExample {
         System.out.println("With Custom Keys");
         exampleWithCustomKeys();
         checkPerformanceForTreeAndHashMap();
+        System.out.println("When key is mutable");
+        checkWithMutableKey();
+    }
+
+    private static void checkWithMutableKey() {
+        // thats why we create the immutable keys , and also implements the hashcode and equals method.
+        Map<MutablePerson ,Integer> map = new HashMap<>();
+        MutablePerson person = new MutablePerson("abc",1);
+        MutablePerson person2 = new MutablePerson("abc",1);
+        map.put(person,1);
+        map.put(person2,2);
+        System.out.println(map.get(person));
+        person.setName("NewName");
+        System.out.println(map.get(person) +" size "+map.size());
+
+        for (Map.Entry<MutablePerson,Integer> entrys : map.entrySet()){
+            System.out.println(entrys.getKey().getName());
+        }
+
     }
 
     private static void exampleWithCustomKeys() {
+
 
         Map<Person,String> map=new HashMap<>();
         map.put(new Person("One",10),"One");

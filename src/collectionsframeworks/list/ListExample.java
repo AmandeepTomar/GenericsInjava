@@ -7,7 +7,8 @@ import java.util.List;
  * public class ArrayList<E> extends AbstractList<E>
  *         implements List<E>, RandomAccess, Cloneable, java.io.Serializable
  *         The List.of and List.copyOf static factory methods provide a convenient way to create unmodifiable lists. The List instances created by these methods have the following characteristics:
- * They are unmodifiable. Elements cannot be added, removed, or replaced. Calling any mutator method on the List will always cause UnsupportedOperationException to be thrown. However, if the contained elements are themselves mutable, this may cause the List's contents to appear to change.
+ * They are unmodifiable. Elements cannot be added, removed, or replaced. Calling any mutator method on the List will always cause UnsupportedOperationException to be thrown. However,
+ * if the contained elements are themselves mutable, this may cause the List's contents to appear to change.
  * They disallow null elements. Attempts to create them with null elements result in NullPointerException.
  * They are serializable if all elements are serializable.
  * The order of elements in the list is the same as the order of the provided arguments, or of the elements in the provided array.

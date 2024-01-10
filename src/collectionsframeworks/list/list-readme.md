@@ -1,7 +1,7 @@
-##List
+## List Interface
 
 `Iterable`<----`Collection`<-----`List, Queue and set` All are interface.
-###List (Interface)
+### List (Interface)
 
 - List `interface` has some specific method related to List
 ```
@@ -119,7 +119,7 @@ int previousIndex();
 
 
 
-##LinkedList
+## LinkedList
   
 - LinkedList node connected by references 
 - As arrays have a disadvantages, there may be `holes` in the Array Data structures and we have to shift a lot of items.
@@ -143,12 +143,11 @@ int previousIndex();
     `List list = Collections.synchronizedList(new LinkedList(...));`
   - Adding and removing from first and last is `O(1)` running time.
 
-
-###Vector
+### Vector
 
 - Thread safe and have capacity increment counter.
 
-###STACK
+### STACK
 
 - `LIFO` Last In First out 
 - Can be implemented using array and LinkedList

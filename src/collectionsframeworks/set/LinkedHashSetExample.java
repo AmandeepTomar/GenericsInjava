@@ -6,6 +6,8 @@ public class LinkedHashSetExample {
 
     public static void main(String[] args) {
         example1();
+        linkedHashSetDemo();
+
     }
 
     private static void example1() {
@@ -40,6 +42,29 @@ public class LinkedHashSetExample {
             System.out.println(item);
         }
 
+    }
+
+
+    private static void linkedHashSetDemo(){
+        Set<String> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add("Aman");
+        linkedHashSet.add("Komal");
+        linkedHashSet.add("Tomar");
+        linkedHashSet.add("Chauhan");
+        linkedHashSet.add(null);
+
+        linkedHashSet.forEach(System.out::println);
+
+        System.out.println("Now Print same with HashSet");
+
+        Set<String> hashSet = new HashSet<>();
+        hashSet.add("Aman");
+        hashSet.add("Komal");
+        hashSet.add("Tomar");
+        hashSet.add("Chauhan");
+        hashSet.add(null);
+
+        hashSet.forEach(System.out::println);
     }
 
 }

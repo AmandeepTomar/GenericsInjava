@@ -1,4 +1,5 @@
 #Collection Frameworks 
+- Collection Framework introduced in JAVA 1.2 , Prior we have `Array , Vector and HashTable.`
 - Almost all the collections(expect for map) can be derived from `java.utill.collection` interface
 - `toArray()` convert any collection into 1-D Array.
 - `Collection` interface extends `java.lang.Iterable`

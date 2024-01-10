@@ -46,6 +46,14 @@ public class SetExample {
             System.out.println(str);
         }
 
+        HashSet<Integer> set1 = new HashSet<>();
+        set1.add(null);
+        set1.add(null);
+        set1.add(1);
+
+        set1.forEach(System.out::print);
+
+
 
 
 
