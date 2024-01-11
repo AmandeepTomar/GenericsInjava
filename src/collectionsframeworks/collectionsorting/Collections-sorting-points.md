@@ -1,11 +1,11 @@
 
-#Sorting Done by Under hood 
+# Sorting Done by Under hood 
 - Java uses Arrays Sorting
   - `QuickSort` sort primitive type (int , float..) 
   - `MergeSort` sort reference type (Integer, String, Custom Objects....)
   - then have `O(NlogN)` Running time complexity.
   - In worst case `QuickSort` may have `O(N2)` but merge sort guarantee `O(NLogN)` 
-#Collections Class
+# Collections Class
   
 - This class consists exclusively of static methods that operate on or return collections.
 - It contains polymorphic algorithms that operate on collections, "wrappers", which return a new collection backed by a specified collection, and a few other odds and ends.
@@ -16,7 +16,7 @@
     - `List<String> queue=new LinkedList<>()` its works fine.
       - If you want to sort reference/Custom Object list 
         - Solution1 -> need to implement `Comparable<Object>` interface
-        - ```aidl
+        - ```java
                 @Override
           public int compareTo(Person o) {
              // return name.compareTo(o.getName()); // provide ascending order

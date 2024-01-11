@@ -7,7 +7,7 @@ import java.util.List;
 public class SynchronizedCollections {
 
     public static void main(String[] args) {
-        problemWithMultiThread();
+       // problemWithMultiThread();
         solutionWithMultiThreaded();
     }
 
