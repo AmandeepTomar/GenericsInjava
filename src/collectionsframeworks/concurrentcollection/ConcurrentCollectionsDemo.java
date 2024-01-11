@@ -1,8 +1,4 @@
-package collectionsframeworks.collectionsorting.concurrentcollection;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+package collectionsframeworks.concurrentcollection;
 
 public class ConcurrentCollectionsDemo {
 

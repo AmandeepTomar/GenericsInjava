@@ -1,4 +1,4 @@
-package collectionsframeworks.collectionsorting.concurrentcollection;
+package collectionsframeworks.concurrentcollection;
 
 import java.util.HashMap;
 import java.util.Map;

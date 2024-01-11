@@ -1,4 +1,4 @@
-package collectionsframeworks.collectionsorting.concurrentcollection;
+package collectionsframeworks.concurrentcollection;
 
 import java.util.ArrayList;
 import java.util.List;
