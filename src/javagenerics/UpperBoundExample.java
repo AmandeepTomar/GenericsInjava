@@ -27,6 +27,7 @@ public class UpperBoundExample {
         List<? extends Number> list2=new ArrayList<Double>();
         List<? extends Number> list3=new ArrayList<Float>();
 
+
       //  list1.add(new Integer(10)); // compile time error as we can not add in upperbound.
 
      // List<? extends Number> list=new ArrayList<String>();  Compile time error as String is not subtype of  Number.
